@@ -1,0 +1,84 @@
+ALGORITHM
+VAR
+
+    num1, num2, num3 : INTEGER;
+    SUM : INTEGER:=0;
+
+BEGIN
+
+   Read(num1)
+   Read(num2)
+   Read(num3)
+   sum := num1 + num2 + num3;
+   (Write)
+
+END
+
+VAR
+   i : INTEGER := 26;
+   f : FLOAT := 4.56;
+   c : CHAR := 'c';
+   s : STRING := 'str';
+   b : BOOLEAN := TRUE;
+BEGIN
+   // this is a single line comment
+   /* this is
+   a multi line comment */
+   f := i; // correct
+   i := f; // wrong
+   // we cannot mix types
+   f := c; // wrong
+   s := c; // correct
+   b := i; // wrong
+END
+
+
+/* *********** Bus tickets ******* */
+
+/*
+ask how old are you
+IF you are under 16, THEN pay half ticket
+ELSE pay full ticket
+*/
+// first solution
+ticket_price := 20 ;
+IF (age <=16) THEN
+   ticket_price := 10 ;
+END_IF
+
+// Second solution
+IF (age <= 16) THEN
+   ticket_price := 10 ;
+ELSE
+   ticket_price := 20 ;
+END_IF
+
+
+IF (age<=10) THEN
+   ticket_price := 4 ;
+ELSE_IF (age<=16) THEN
+/*  in this case, we don't specify whether the age is not under 10
+because in this case it will satisfy the first condition
+and execute the first block of instruction */
+   ticket_price := 10 ;
+ELSE
+   ticket_price := 20 ;
+END_IF
+
+
+/* **** Zoo time **** */
+/*
+1 refer to winter
+2 refer to spring
+3 refer to summer
+4 refer to autumn
+*/
+SWITCH (season) DO
+   case 1 : Write("10h00 to 16h00"); BREAK;
+   case 2 : Write("10h00 to 18h00"); BREAK;
+   case 3 : Write("10h00 to 20h00"); BREAK;
+   case 4 : Write("10h00 to 16h00"); BREAK;
+   default : Write("Wrong number") // optional use of BREAK;
+END_SWITCH
+
+
